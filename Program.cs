@@ -18,7 +18,20 @@ namespace main
         }
         static void func1(string[] args)
         {
-            
+            Console.WriteLine("Тип bool:");
+            bool check = true;
+            Console.WriteLine(check ? "Checked" : "Not checked");  // output: Checked
+            Console.WriteLine(false ? "Checked" : "Not checked");  // output: Not checked
+            Console.WriteLine("Тип byte:");
+            byte a = 254;
+            Console.WriteLine(a);
+            Console.WriteLine("Тип sbyte:");
+            sbyte b = -128;
+            Console.WriteLine(b);
+            Console.WriteLine("Тип char:");
+            char c = 's';
+            Console.WriteLine(c);
+           
         }
     }
 }
