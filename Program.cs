@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks.Dataflow;
 
 namespace main
@@ -146,7 +147,19 @@ namespace main
             Console.WriteLine($"{user.Name} is {user.Age} years old");
 
             //Создайте пустую и nullстроку. Продемонстрируйте использование метода string.IsNullOrEmpty. Продемонстрируйте что еще можно выполнить с такими строками
+            Console.WriteLine("Провекра на пустоту: ");
+            string str1 = null;
+            string str2 = "";
+            Console.WriteLine(string.IsNullOrEmpty(str1));
+            Console.WriteLine(string.IsNullOrEmpty(str2));
 
+            StringBuilder sb1 = new StringBuilder("hello world");
+            sb1.Remove(0, 2);
+            Console.WriteLine("Удаление символов: "+(sb1));
+            sb1.Replace("world", "мир");
+            Console.WriteLine("Замена слова: "+sb1);
+            sb1.Insert(0, "хочу кушац");
+            Console.WriteLine("Вставка слова: "+sb1);
 
         }
     }
