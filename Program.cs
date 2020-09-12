@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Threading.Tasks.Dataflow;
 
 namespace main
 {
@@ -14,6 +17,10 @@ namespace main
             {
                 case 1:
                     func1(args);  
+                    break;
+
+                case 2:
+                    func2(args);
                     break;
             }
         }
@@ -110,6 +117,37 @@ namespace main
             var aa = 10000;
             int bb = aa;
             //????????????????????????????????
+        }
+        static void func2(string[] args)
+        {
+           //сравнение строк
+            Console.WriteLine("Введите первую строку: ");
+            string s1 = Console.ReadLine();
+            Console.WriteLine("Введите вторую строку: ");
+            string s2 = Console.ReadLine();
+            Console.WriteLine("Результат сравнения:" + (s1 == s2));
+
+            //приколы над строками
+            string line1 = "Первая строка";
+            string line2 = "Вторая строка";
+            string line3 = "Третья строка";
+            Console.WriteLine("Конкантинация:" + (line1 + line2 + line3));
+            Console.WriteLine("Выделение подстроки:" + (line1.Substring(2, 5)));
+            string[] words = line1.Split(' ');
+            Console.WriteLine("Певрое слово:" + words[0]);
+            Console.WriteLine("Второе слово:" + words[1]);
+            string modif = line2.Insert(2, line1);
+            Console.WriteLine("После вставки подстроки: " + modif);
+            var user = new
+            {
+                Name = "John Doe",
+                Age = 42
+            };
+            Console.WriteLine($"{user.Name} is {user.Age} years old");
+
+            //Создайте пустую и nullстроку. Продемонстрируйте использование метода string.IsNullOrEmpty. Продемонстрируйте что еще можно выполнить с такими строками
+
+
         }
     }
 }
