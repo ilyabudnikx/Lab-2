@@ -89,6 +89,27 @@ namespace main
 
             int price2 = (int)obj;
 
+            //Неявно типизорованая переменная
+            for (var i = 0; i<10; i++)
+            {
+                string b66 = DateTime.Now.ToString();
+                Console.WriteLine(b66);
+            }
+
+            //работа с null
+            int? c66 = 7;
+            if (c66 != null)
+            {
+                Console.WriteLine($"c is {c66.Value}");
+            }
+            else
+            {
+                Console.WriteLine("c does not have a value");
+            }
+            //????????????????????????????????
+            var aa = 10000;
+            int bb = aa;
+            //????????????????????????????????
         }
     }
 }
