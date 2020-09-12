@@ -19,6 +19,8 @@ namespace main
         }
         static void func1(string[] args)
         {
+
+            //Типы
             Console.WriteLine("Тип bool:");
             bool check = true;
             Console.WriteLine(check ? "Checked" : "Not checked");  
@@ -59,6 +61,33 @@ namespace main
             Console.WriteLine("Тип ushort:");
             ushort b1 = 2313;
             Console.WriteLine(b1);
+
+            //Не явное преоброзование
+            int a11 = 111111111;
+            long b11 = a11;
+
+            byte a22 = 22;
+            ushort b22 = a22;
+
+            uint a33 = 2323233;
+            ulong b33 = a33;
+
+            sbyte a44 = 127;
+            short b44 = a44;
+
+            //Явное преоброзование 
+            Console.WriteLine("Явное преобразование:");
+            double x = 1234.7;
+            Console.WriteLine("До " + x);
+            int a55;
+            a55 = (int)x;
+            Console.WriteLine("После " + a55);
+
+            //Упаковка и распоковка 
+            int price = 10;
+            object obj = price;
+
+            int price2 = (int)obj;
 
         }
     }
