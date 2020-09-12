@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace main
 {
@@ -20,8 +21,8 @@ namespace main
         {
             Console.WriteLine("Тип bool:");
             bool check = true;
-            Console.WriteLine(check ? "Checked" : "Not checked");  // output: Checked
-            Console.WriteLine(false ? "Checked" : "Not checked");  // output: Not checked
+            Console.WriteLine(check ? "Checked" : "Not checked");  
+            Console.WriteLine(false ? "Checked" : "Not checked");  
             Console.WriteLine("Тип byte:");
             byte a = 254;
             Console.WriteLine(a);
@@ -31,7 +32,34 @@ namespace main
             Console.WriteLine("Тип char:");
             char c = 's';
             Console.WriteLine(c);
-           
+            Console.WriteLine("Тип decimal:");
+            decimal d = 45.08M;
+            Console.WriteLine(d);
+            Console.WriteLine("Тип double:");
+            double e = 12312312313;
+            Console.WriteLine(e);
+            Console.WriteLine("Тип float:");
+            float f = 12313.22F;
+            Console.WriteLine(f);
+            Console.WriteLine("Тип int:");
+            int g = 1;
+            Console.WriteLine(g);
+            Console.WriteLine("Тип uint");
+            uint a1 = 43023421;
+            Console.WriteLine(a1);
+            Console.WriteLine("Тип long:");
+            long a2 = -213123123;
+            Console.WriteLine(a2);
+            Console.WriteLine("Тип ulong");
+            ulong a3 = 123123;
+            Console.WriteLine(a3);
+            Console.WriteLine("Тип short");
+            short a4 = 3212;
+            Console.WriteLine(a4);
+            Console.WriteLine("Тип ushort:");
+            ushort b1 = 2313;
+            Console.WriteLine(b1);
+
         }
     }
 }
