@@ -23,6 +23,10 @@ namespace main
                 case 2:
                     func2(args);
                     break;
+
+                case 3:
+                    func3(args);
+                      break;
             }
         }
         static void func1(string[] args)
@@ -160,7 +164,66 @@ namespace main
             Console.WriteLine("Замена слова: "+sb1);
             sb1.Insert(0, "хочу кушац");
             Console.WriteLine("Вставка слова: "+sb1);
+        }
+        static void func3(string[] args)
+        {
+            //массивы
+            //a
+            // Объявляем двумерный массив
+            int[,] myArr = new int[4, 5];
 
+            Random ran = new Random();
+
+            // Инициализируем данный массив
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    myArr[i, j] = ran.Next(1, 15);
+                    Console.Write("{0}\t", myArr[i, j]);
+                }
+                Console.WriteLine();
+            }
+            string[] mas = { "first", "second", "third" };
+            int length = mas.Length;
+            for (int i = 0; i < length; ++i)
+            {
+                if (i == 2)
+                {
+                    mas[i] = "not second";
+                }
+            }
+            Console.WriteLine();
+            for (int i = 0; i < length; ++i)
+            {
+                Console.WriteLine(mas[i]);
+            }
+            Console.WriteLine();
+            Console.WriteLine("Длинна массива : {0}", length);
+            Console.ReadKey();
+
+            int[][] mas1 = new int[3][];
+            mas1[0] = new int[2] { 1, 2 };
+            mas1[1] = new int[3] { 1, 2, 3 };
+            mas1[2] = new int[4] { 1, 2, 3, 4 };
+            for (int i = 0; i < mas1.Length; i++)
+            {
+                for (int j = 0; j < mas1[i].Length; j++)
+                {
+                    Console.Write($"{mas1[i][j]} \t");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+            var varMas = new[] { 1, 2, 3, 4, 5 };
+            for (int k = 1; k <= varMas.Length; k++)
+            {
+                Console.WriteLine(k);
+            }
+            Console.ReadKey();
+
+            var array = new object[0];
+            var str = "";
         }
     }
 }
