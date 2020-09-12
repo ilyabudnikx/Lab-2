@@ -6,7 +6,8 @@ namespace main
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите номер задания/функции:");
+            Console.WriteLine("Введите номер задания/функции:\n");
+            Console.WriteLine(" 1)Типы.\n 2)Строки.\n 3)Массивы.\n 4)Кортежи.\n 5)Работа с массивами.\n 6)Работа с checked/unchecked.\n");
             int num_switch = Convert.ToInt32(Console.ReadLine());
             switch(num_switch)
             {
@@ -17,7 +18,7 @@ namespace main
         }
         static void func1(string[] args)
         {
-            Console.WriteLine("sosi");
+            
         }
     }
 }
