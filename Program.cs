@@ -27,6 +27,18 @@ namespace main
                 case 3:
                     func3(args);
                       break;
+
+                case 4:
+                    func4(args);
+                    break;
+
+                case 5:
+                    func5(args);
+                    break;
+                case 6:
+                    func6(args);
+                    break;
+
             }
         }
         static void func1(string[] args)
@@ -224,6 +236,70 @@ namespace main
 
             var array = new object[0];
             var str = "";
+        }
+        static void func4(string[] args)
+        {
+            (int, string, char, string, ulong) tuple1 = (10, "Привет", 't', "world", 12312313);
+            Console.WriteLine(tuple1);
+            Console.WriteLine(tuple1.Item1);
+            Console.WriteLine(tuple1.Item3);
+            Console.WriteLine(tuple1.Item4);
+
+            var t = ("post office", 3.6);
+            (string destination, double distance) = t;
+            Console.WriteLine($"Distance to {destination} is {distance} kilometers.");
+
+            (int a, byte b) left = (5, 10);
+            (long a, int b) right = (5, 10);
+            Console.WriteLine(left == right);  // output: True
+            Console.WriteLine(left != right);
+        }
+        static void func5(string[] args)
+        {
+            int[] a = new int[] { 3, 4, 1, 2, 5 };
+            string s = "Hello";
+            var tuple = GetValues(a, s);
+            Console.WriteLine($"Максимальный элемент: {tuple.Max}");
+            Console.WriteLine($"Минимальный элемент: {tuple.Min}");
+            Console.WriteLine($"Сумма элементов: {tuple.Sum}");
+            Console.WriteLine($"Первый символ строки: {tuple.First}");
+            Console.ReadKey();
+        }
+        private static (int Max, int Min, int Sum, string First) GetValues(int[] a, string s)
+        {
+
+            var result = (Max: a[0], Min: a[0], Sum: 0, First: "");
+            result.First = s.Remove(1);
+            for (int i = 0; i < a.Length; i++)
+            {
+                result.Sum += a[i];
+            }
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (result.Max < a[i])
+                {
+                    result.Max = a[i];
+                }
+            }
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (result.Min > a[i])
+                {
+                    result.Min = a[i];
+                }
+            }
+            return result;
+        }
+        static void func6(string[] args)
+        {
+            int ten = 10;
+            unchecked //при переполнении типа считает заново, при чеке выдаёт ошибку
+
+            {
+
+                int i1 = 2147483647 + ten;
+                Console.WriteLine(i1);
+            }
         }
     }
 }
